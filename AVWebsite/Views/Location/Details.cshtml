@@ -1,0 +1,48 @@
+﻿@model AVWebsite.Models.Location
+
+@{
+    ViewData["Title"] = "Location Detail";
+    var imagePath = "~/images/locationImages/" + Model.FeatureImage;
+}
+
+<div class="card card-flush pt-3 mb-5 mb-xl-10">
+
+    <!--begin::Alert-->
+    <div class="alert alert-primary">
+        <span class="menu-icon me-0">
+
+        </span>
+        <div class="d-flex flex-column">
+            <!--begin::Title-->
+            <h1 class="mb-1 text-center text-dark">@Model.Name</h1>
+
+        </div>
+        <!--end::Wrapper-->
+    </div>
+    <!--end::Alert-->
+    <div class="card-body pt-3">
+        <div class="mb-10">
+
+            
+
+            <table class="table fs-6 fw-bold gs-0 gy-2 gx-2 m-0">
+
+                <tr>
+                    <td class="text-gray-400">Location Description:</td>
+
+                </tr>
+                <tr>
+                    <td>@Html.Raw(@Model.Description)</td>
+                </tr>
+
+            </table>
+            <br />
+            <br />
+            <div class="container">
+                <img src="@imagePath" class="img-fluid" alt="..." asp-append-version="true">
+            </div>
+        </div>
+
+    </div>
+
+</div>

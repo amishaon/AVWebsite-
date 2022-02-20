@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.14" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.14">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="NuGet.CommandLine" Version="5.11.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="NuGet.Packaging.Core" Version="5.11.0" />
+    <PackageReference Include="NuGet.PackageManagement" Version="5.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.AspNet.Mvc" />
+    <None Remove="MySql.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="NuGet.CommandLine" />
+    <None Remove="NuGet.Packaging.Core" />
+    <None Remove="NuGet.PackageManagement" />
+    <None Remove="Models\ViewModels\" />
+    <None Remove="Views\Location\" />
+    <None Remove="Views\BookingStatus\" />
+    <None Remove="Views\AdditionalService\" />
+    <None Remove="Models\Tour\" />
+    <None Remove="Models\TourModels\" />
+    <None Remove="Models\ViewModels\Tour\" />
+    <None Remove="Views\Tour\" />
+    <None Remove="Views\TourPackage\" />
+    <None Remove="Models\HH\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="wwwroot\images\locationImages\" />
+    <Folder Include="Views\Location\" />
+    <Folder Include="Views\BookingStatus\" />
+    <Folder Include="wwwroot\images\additionalServices\" />
+    <Folder Include="Views\AdditionalService\" />
+    <Folder Include="Models\Tour\" />
+    <Folder Include="Models\ViewModels\Tour\" />
+    <Folder Include="Views\Tours\" />
+    <Folder Include="wwwroot\images\TourFeatureImages\" />
+    <Folder Include="Views\TourPackage\" />
+    <Folder Include="wwwroot\images\tourPackageImages\" />
+    <Folder Include="Models\HH\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\images\locationImages\" />
+    <Content Remove="wwwroot\images\additionalServices\" />
+    <Content Remove="wwwroot\images\TourFeatureImages\" />
+    <Content Remove="wwwroot\images\tourPackageImages\" />
+  </ItemGroup>
+</Project>

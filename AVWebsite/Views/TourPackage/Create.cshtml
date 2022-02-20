@@ -1,0 +1,121 @@
+﻿@model AVWebsite.Models.ViewModels.Tour.TourPackageVM
+
+@{
+    ViewData["Title"] = "Create New TourPackage";
+}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $("#startDate, #endDate").kendoDateTimePicker({
+            value: new Date(),
+            format: "dd MMM yy",
+            dateInput: false
+        });
+    });
+</script>
+<h1>Create New Tour Package</h1>
+
+<br />
+<br />
+<div class="card card-flush pt-3 mb-5 mb-xl-10">
+    <br />
+    <div class="container">
+        <form enctype="multipart/form-data" asp-action="Create" asp-controller="TourPackage" method="post">
+            <input asp-for="Id" type="text" hidden />
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Tour Package Name</label>
+                    <input asp-for="Title" type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Unit Name Tag</label>
+                    <select id="unitName" asp-for="UnitName" class="form-select form-select-solid form-select-lg fw-bold">
+                        <option value="">Select Package Unit</option>
+                        <option value="Per Person">Per Person</option>
+                        <option value="Per Package">Per Package</option>
+                        <option value="Per Car">Per Car</option>
+                        <option value="Per Boat">Per Boat</option>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Unit Price</label>
+                    <input asp-for="UnitPrice" type="number" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group col-10">
+                <label>Package Description</label>
+                <textarea id="description" asp-for="Description" class="form-control"></textarea>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Package Inclusion</label>
+                    <textarea asp-for="Inclusion" class="form-control"></textarea>
+                </div>
+                <div class="form-group col-6">
+                    <label>Package Exclusion</label>
+                    <textarea asp-for="Exclusion" class="form-control"></textarea>
+                </div>
+
+            </div>
+           <br />
+            <div class="row">
+                <div class="form-group col-3">
+                    <label>Package Start Date</label>
+                    <input id="startDate" asp-for="StartDate" class="form-control" />
+
+                </div>
+                <div class="form-group col-3">
+                    <label>Package End Date</label>
+                    <input id="endDate" asp-for="EndDate" class="form-control" />
+                </div>
+                <div class="form-group col-3">
+                    <label>Maximum Persion</label>
+                    <input asp-for="MaximumPersion" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-3">
+                    <label>Minimium Persion</label>
+                    <input asp-for="MinimumPerson" type="number" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group col-3">
+                    <label>Quantity</label>
+                    <input asp-for="Qty" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label>Feature Image</label>
+                    <div class="custom-file">
+                        <input asp-for="Image" class="form-control custom-file-input">
+                        <label class="custom-file-label">Choose File...</label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-lg btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+
+
+    <script>$(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        });</script>
+    <script>$(document).ready(function () {
+            $('#description').richText();
+        });</script>
+
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

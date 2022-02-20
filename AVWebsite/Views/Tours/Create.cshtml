@@ -1,0 +1,178 @@
+﻿@model AVWebsite.Models.ViewModels.Tour.ToursVM
+
+@{
+    ViewData["Title"] = "Create Tour";
+}
+
+
+<h1>Create New Tour</h1>
+
+<br />
+<br />
+<div class="card card-flush pt-3 mb-5 mb-xl-10">
+    <br />
+    <div class="container">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <input asp-for="Id" type="text" hidden />
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="guestName">Tour Name</label>
+                    <input asp-for="Name" type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group col-6">
+                    <label>Select Primary Location</label>
+                    <select id="locationId" asp-for="LocationId" asp-items="@Model.LocationList" class="form-select form-select-solid form-select-lg fw-bold">
+                        <option value="">Select Primary Location</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label>Feature Price</label>
+                    <input asp-for="FeaturePrice" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-4">
+                    <label>Feature Price Text</label>
+                    <input asp-for="FeaturePriceText" type="text" class="form-control" />
+                </div>
+                <label class="col-sm-2 col-form-label">Feature Image</label>
+                <div class="col-4">
+                    <div class="custom-file">
+                        <input asp-for="FeatureImage" class="form-control custom-file-input">
+                        <label class="custom-file-label">Choose File...</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Inclusion</label>
+                    <textarea asp-for="Inclusions" class="form-control"></textarea>
+                </div>
+                <div class="form-group col-6">
+                    <label>Exclusions</label>
+                    <textarea asp-for="Exclusion" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Hightlights</label>
+                    <textarea asp-for="Highlightis" class="form-control"></textarea>
+                </div>
+                <div class="form-group col-6">
+                    <label>Full Description</label>
+                    <textarea asp-for="FullDescription" class="form-control"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-6">
+                    <label>Map Longtitude</label>
+                    <input asp-for="MapLong" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label>Map Latitude</label>
+                    <input asp-for="MapLat" type="number" class="form-control" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <label>Maxmimum Persion</label>
+                    <input asp-for="MaximumPerson" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-4">
+                    <label>Minimum Persion</label>
+                    <input asp-for="MinimumPersion" type="number" class="form-control" />
+                </div>
+                <div class="form-group col-4">
+                    <label>Tour Duration</label>
+                    <input asp-for="Duration" type="text" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-3">
+                    <label>Select Primary Location</label>
+                    <select id="tourTypeId" asp-for="TourLocations" asp-items="@Model.LocationList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Packages</label>
+                    <select id="tourPackage" asp-for="Tourpackages" asp-items="@Model.TourPackageList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Type</label>
+                    <select id="tourType" asp-for="TourTypess" asp-items="@Model.TourTypeList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Category</label>
+                    <select id="tourCategory" asp-for="TourCategories" asp-items="@Model.TourCategoryList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-3">
+                    <label>Select About Sections</label>
+                    <select id="tourAbout" asp-for="Abouts" asp-items="@Model.AboutList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select What To Expects</label>
+                    <select id="whatToExpect" asp-for="WhatToExpects" asp-items="@Model.WhatToExpectList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Additional Services</label>
+                    <select id="services" asp-for="AdditionalServices" asp-items="@Model.AdditionalServiceList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <label>Select Faqs</label>
+                    <select id="tourFaqs" asp-for="TourFaqs" asp-items="@Model.TourFaqList" class="form-select form-select-solid form-select-lg fw-bold" multiple>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group col-2">
+                <label>Gallery Id</label>
+                <input asp-for="GalleryId" type="number" class="form-control" />
+            </div>
+            <div class="modal-footer">
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-lg btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+
+
+    <script>$(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        });</script>
+    <script>$(document).ready(function () {
+            $('textarea').richText();
+        });</script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('#tourTypeId, #tourPackage, #tourType, #tourCategory, #tourAbout, #whatToExpect, #services, #tourFaqs').multiselect({
+
+           includeSelectAllOption: true
+
+            });
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

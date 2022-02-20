@@ -1,0 +1,1186 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="">
+    <title>@ViewData["Title"] - AV BMS - Booking Management Software</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1/main.min.css" />*@
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default-v2.min.css" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <!--DATA TABLE CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.0/css/fixedHeader.dataTables.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <!--Full Calender Script-->
+
+    <script>src = "~/js/main.js"</script>
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    @*ADMIN TEMPLATE DEMO 06*@
+    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <link rel="shortcut icon" href="~/demo6/assets/media/logos/favicon.png" />
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="~/demo6/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="~/demo6/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Global Stylesheets Bundle-->
+
+
+    <link href="~/richText/richtext.min.css" rel="stylesheet" />
+
+    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+          rel="stylesheet" type="text/css" />
+
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="header-fixed header-tablet-and-mobile-fixed aside-enabled aside-fixed">
+    <!--begin::Main-->
+    <!--begin::Root-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Page-->
+        <div class="page d-flex flex-row flex-column-fluid">
+            <!--begin::Aside-->
+            <div id="kt_aside" class="aside pb-5 pt-5 pt-lg-0" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'80px', '300px': '100px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
+                <!--begin::Brand-->
+                <div class="aside-logo py-8" id="kt_aside_logo">
+                    <!--begin::Logo-->
+                    <a asp-controller="Home" asp-action="Index" class="d-flex align-items-center">
+                        <img alt="Logo" src="~/demo6/assets/media/logos/Avijatrik Logo.png" class="h-60px logo" />
+                    </a>
+                    <!--end::Logo-->
+                </div>
+                <!--end::Brand-->
+                <!--begin::Aside menu-->
+                <div class="aside-menu flex-column-fluid" id="kt_aside_menu">
+                    <!--begin::Aside Menu-->
+                    <div class="hover-scroll-overlay-y my-2 my-lg-5 pe-lg-n1" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu" data-kt-scroll-offset="5px">
+                        <!--begin::Menu-->
+                        <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
+                            <div class="menu-item py-2">
+                                <a class="menu-link menu-center" asp-controller="Home" asp-action="Index" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-icon me-0">
+                                        <i class="bi bi-emoji-sunglasses-fill fs-2"></i>
+                                    </span>
+                                    <span class="menu-title">Dashboard</span>
+                                </a>
+                            </div>
+                            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-icon me-0">
+                                        <i class="bi bi-house-fill fs-2"></i>
+                                    </span>
+                                    <span class="menu-title text-center">Holiday Home</span>
+                                </span>
+                                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                    <div class="menu-item">
+                                        <div class="menu-content">
+                                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Holiday Home</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Booking" asp-action="Index">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Calendar</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Booking" asp-action="SalesList">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Booking Report</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="CancelBooking" asp-action="CancelListsp">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Canceled Booking List</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="PostPonedBooking" asp-action="PostPoneListSP">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Postponed Booking List</span>
+                                        </a>
+                                    </div>
+                                    
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Booking" asp-action="SalesListsp">
+
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">SP Booking List</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="PackageRoom" asp-action="Index">
+
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Package / Room</span>
+                                            </a>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+
+                            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-icon me-0">
+                                        <i class="bi bi-megaphone-fill fs-2"></i>
+                                    </span>
+                                    <span class="menu-title text-center">Tour</span>
+                                </span>
+                                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                    <div class="menu-item">
+                                        <div class="menu-content">
+                                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Tour</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Tour" asp-action="Create">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Create a Query</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Tour" asp-action="Index">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Query List</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Home" asp-action="ListByUser">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">My Query List</span>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-icon me-0">
+                                        <i class="bi bi-file-earmark-image fs-2"></i>
+                                    </span>
+                                    <span class="menu-title text-center">Product</span>
+                                </span>
+                                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                    <div class="menu-item">
+                                        <div class="menu-content">
+                                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Product</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Location" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Location</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="SupplierType" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Service Type</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Supplier" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Supplier</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Product" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Product</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                    <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                        <span class="menu-icon me-0">
+                                            <i class="bi bi-people-fill fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Users</span>
+                                    </span>
+                                    <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                        <div class="menu-item">
+                                            <div class="menu-content">
+                                                <span class="menu-section fs-5 fw-bolder ps-1 py-1">Users</span>
+                                            </div>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Account" asp-action="Register">
+
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Add New User</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Account" asp-action="HHList">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Holiday Home List</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Account" asp-action="UserList">
+
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Admin & Super Admin</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Account" asp-action="SmmList">
+
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">SMM List</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                    <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                        <span class="menu-icon me-0">
+                                            <i class="bi bi-bar-chart-fill fs-2"></i>
+                                        </span>
+                                        <span class="menu-title">Reports</span>
+                                    </span>
+                                    <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                        <div class="menu-item">
+                                            <div class="menu-content">
+                                                <span class="menu-section fs-5 fw-bolder ps-1 py-1">Reports</span>
+                                            </div>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Reports" asp-action="HHSalesSummery">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Holiday Home Sales Summery</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Reports" asp-action="PrInventory">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Holiday Home Inventory</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Reports" asp-action="QuerySalesReport">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Booked Query Report</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item">
+                                            <a class="menu-link" asp-controller="Reports" asp-action="TourSalesReport">
+                                                <span class="menu-bullet">
+                                                    <span class="bullet bullet-dot"></span>
+                                                </span>
+                                                <span class="menu-title">Tour Booked Report</span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            
+
+                            <div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" class="menu-item py-2">
+                                <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <span class="menu-icon me-0">
+                                        <i class="bi bi-gear-fill fs-2"></i>
+                                    </span>
+                                    <span class="menu-title">Global Tables</span>
+                                </span>
+                                <div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
+                                    <div class="menu-item">
+                                        <div class="menu-content">
+                                            <span class="menu-section fs-5 fw-bolder ps-1 py-1">Settings</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="Location" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Location</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="BookingStatus" asp-action="Index">
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Booking Status</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="AdditionalService" asp-action="Index">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Additional Service</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="QueryFor" asp-action="Index">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Query For</span>
+                                        </a>
+                                    </div>
+                                    <div class="menu-item">
+                                        <a class="menu-link" asp-controller="PaymentMethod" asp-action="Index">
+
+                                            <span class="menu-bullet">
+                                                <span class="bullet bullet-dot"></span>
+                                            </span>
+                                            <span class="menu-title">Manage Payment Method</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--end::Menu-->
+                    </div>
+                    <!--end::Aside Menu-->
+                </div>
+                <!--end::Aside menu-->
+                <!--begin::Footer-->
+                <div class="aside-footer flex-column-auto" id="kt_aside_footer">
+                    <!--begin::Menu-->
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btm-sm btn-icon btn-active-color-primary" data-kt-menu-trigger="click" data-kt-menu-overflow="true" data-kt-menu-placement="top-start" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-dismiss="click" title="Quick actions">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen008.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 2H10C10.6 2 11 2.4 11 3V10C11 10.6 10.6 11 10 11H3C2.4 11 2 10.6 2 10V3C2 2.4 2.4 2 3 2Z" fill="black" />
+                                    <path opacity="0.3" d="M14 2H21C21.6 2 22 2.4 22 3V10C22 10.6 21.6 11 21 11H14C13.4 11 13 10.6 13 10V3C13 2.4 13.4 2 14 2Z" fill="black" />
+                                    <path opacity="0.3" d="M3 13H10C10.6 13 11 13.4 11 14V21C11 21.6 10.6 22 10 22H3C2.4 22 2 21.6 2 21V14C2 13.4 2.4 13 3 13Z" fill="black" />
+                                    <path opacity="0.3" d="M14 13H21C21.6 13 22 13.4 22 14V21C22 21.6 21.6 22 21 22H14C13.4 22 13 21.6 13 21V14C13 13.4 13.4 13 14 13Z" fill="black" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </button>
+                        <!--begin::Menu 2-->
+                        <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px" data-kt-menu="true">
+                            <!--begin::Menu item-->
+                            <div class="menu-item px-3">
+                                <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Quick Actions</div>
+                            </div>
+                            <!--end::Menu item-->
+                            <!--begin::Menu separator-->
+                            <div class="separator mb-3 opacity-75"></div>
+
+
+                            <!--end::Menu item-->
+                        </div>
+                        <!--end::Menu 2-->
+                    </div>
+                    <!--end::Menu-->
+                </div>
+                <!--end::Footer-->
+            </div>
+            <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+                <!--begin::Header-->
+                <div id="kt_header" style="" class="header align-items-stretch">
+                    <!--begin::Container-->
+                    <div class="container-fluid d-flex align-items-stretch justify-content-between">
+                        <!--begin::Aside mobile toggle-->
+                        <div class="d-flex align-items-center d-lg-none ms-n1 me-2" title="Show aside menu">
+                            <div class="btn btn-icon btn-active-color-primary w-30px h-30px w-md-40px h-md-40px" id="kt_aside_mobile_toggle">
+                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
+                                <span class="svg-icon svg-icon-2x mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="black" />
+                                        <path opacity="0.3" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="black" />
+                                    </svg>
+                                </span>
+                                <!--end::Svg Icon-->
+                            </div>
+                        </div>
+                        <!--end::Aside mobile toggle-->
+                        <!--begin::Mobile logo-->
+                        <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+                            <a href="../../demo6/dist/index.html" class="d-lg-none">
+                                <img alt="Logo" src="~/demo6/assets/media/logos/Avijatrik Logo.png" class="h-40px" />
+                            </a>
+                        </div>
+                        <!--end::Mobile logo-->
+                        <!--begin::Wrapper-->
+                        <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                            <!--begin::Navbar-->
+                            <div class="d-flex align-items-center" id="kt_header_nav">
+                                <!--begin::Page title-->
+                                <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_header_nav'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+
+                                    <!--end::Breadcrumb-->
+                                </div>
+                                <!--end::Page title-->
+                            </div>
+                            <!--end::Navbar-->
+                            <!--begin::Topbar-->
+                            <div class="d-flex align-items-stretch flex-shrink-0">
+                                <!--begin::Toolbar wrapper-->
+                                <div class="d-flex align-items-stretch flex-shrink-0">
+                                    <!--begin::Search-->
+                                    <div class="d-flex align-items-stretch ms-1 ms-lg-3">
+                                        <!--begin::Search-->
+                                        <div id="kt_header_search" class="d-flex align-items-stretch" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-menu-trigger="auto" data-kt-menu-overflow="false" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end">
+                                            <!--begin::Search toggle-->
+                                            <div class="d-flex align-items-center" data-kt-search-element="toggle" id="kt_header_search_toggle">
+                                                <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px">
+                                                    <i class="bi bi-search fs-2"></i>
+                                                </div>
+                                            </div>
+                                            <!--end::Search toggle-->
+                                            <!--begin::Menu-->
+                                            <div data-kt-search-element="content" class="menu menu-sub menu-sub-dropdown p-7 w-325px w-md-375px">
+                                                <!--begin::Wrapper-->
+                                                <div data-kt-search-element="wrapper">
+                                                    <!--begin::Form-->
+                                                    <form data-kt-search-element="form" class="w-100 position-relative mb-3" autocomplete="off">
+                                                        <!--begin::Icon-->
+                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
+                                                        <span class="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 translate-middle-y ms-0">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black" />
+                                                            </svg>
+                                                        </span>
+                                                        <!--end::Svg Icon-->
+                                                        <!--end::Icon-->
+                                                        <!--begin::Input-->
+                                                        <input type="text" class="form-control form-control-flush ps-10" name="search" value="" placeholder="Search..." data-kt-search-element="input" />
+                                                        <!--end::Input-->
+                                                        <!--begin::Spinner-->
+                                                        <span class="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-1" data-kt-search-element="spinner">
+                                                            <span class="spinner-border h-15px w-15px align-middle text-gray-400"></span>
+                                                        </span>
+                                                        <!--end::Spinner-->
+                                                        <!--begin::Reset-->
+                                                        <span class="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 d-none" data-kt-search-element="clear">
+                                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                                                            <span class="svg-icon svg-icon-2 svg-icon-lg-1 me-0">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                                                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </span>
+                                                        <!--end::Reset-->
+                                                        <!--begin::Toolbar-->
+                                                        <div class="position-absolute top-50 end-0 translate-middle-y" data-kt-search-element="toolbar">
+                                                            <!--begin::Preferences toggle-->
+                                                            <div data-kt-search-element="preferences-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary me-1" data-bs-toggle="tooltip" title="Show search preferences">
+                                                                <!--begin::Svg Icon | path: icons/duotune/coding/cod001.svg-->
+                                                                <span class="svg-icon svg-icon-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                        <path opacity="0.3" d="M22.1 11.5V12.6C22.1 13.2 21.7 13.6 21.2 13.7L19.9 13.9C19.7 14.7 19.4 15.5 18.9 16.2L19.7 17.2999C20 17.6999 20 18.3999 19.6 18.7999L18.8 19.6C18.4 20 17.8 20 17.3 19.7L16.2 18.9C15.5 19.3 14.7 19.7 13.9 19.9L13.7 21.2C13.6 21.7 13.1 22.1 12.6 22.1H11.5C10.9 22.1 10.5 21.7 10.4 21.2L10.2 19.9C9.4 19.7 8.6 19.4 7.9 18.9L6.8 19.7C6.4 20 5.7 20 5.3 19.6L4.5 18.7999C4.1 18.3999 4.1 17.7999 4.4 17.2999L5.2 16.2C4.8 15.5 4.4 14.7 4.2 13.9L2.9 13.7C2.4 13.6 2 13.1 2 12.6V11.5C2 10.9 2.4 10.5 2.9 10.4L4.2 10.2C4.4 9.39995 4.7 8.60002 5.2 7.90002L4.4 6.79993C4.1 6.39993 4.1 5.69993 4.5 5.29993L5.3 4.5C5.7 4.1 6.3 4.10002 6.8 4.40002L7.9 5.19995C8.6 4.79995 9.4 4.39995 10.2 4.19995L10.4 2.90002C10.5 2.40002 11 2 11.5 2H12.6C13.2 2 13.6 2.40002 13.7 2.90002L13.9 4.19995C14.7 4.39995 15.5 4.69995 16.2 5.19995L17.3 4.40002C17.7 4.10002 18.4 4.1 18.8 4.5L19.6 5.29993C20 5.69993 20 6.29993 19.7 6.79993L18.9 7.90002C19.3 8.60002 19.7 9.39995 19.9 10.2L21.2 10.4C21.7 10.5 22.1 11 22.1 11.5ZM12.1 8.59998C10.2 8.59998 8.6 10.2 8.6 12.1C8.6 14 10.2 15.6 12.1 15.6C14 15.6 15.6 14 15.6 12.1C15.6 10.2 14 8.59998 12.1 8.59998Z" fill="black" />
+                                                                        <path d="M17.1 12.1C17.1 14.9 14.9 17.1 12.1 17.1C9.30001 17.1 7.10001 14.9 7.10001 12.1C7.10001 9.29998 9.30001 7.09998 12.1 7.09998C14.9 7.09998 17.1 9.29998 17.1 12.1ZM12.1 10.1C11 10.1 10.1 11 10.1 12.1C10.1 13.2 11 14.1 12.1 14.1C13.2 14.1 14.1 13.2 14.1 12.1C14.1 11 13.2 10.1 12.1 10.1Z" fill="black" />
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </div>
+                                                            <!--end::Preferences toggle-->
+                                                            <!--begin::Advanced search toggle-->
+                                                            <div data-kt-search-element="advanced-options-form-show" class="btn btn-icon w-20px btn-sm btn-active-color-primary" data-bs-toggle="tooltip" title="Show more search options">
+                                                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
+                                                                <span class="svg-icon svg-icon-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                        <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="black" />
+                                                                    </svg>
+                                                                </span>
+                                                                <!--end::Svg Icon-->
+                                                            </div>
+                                                            <!--end::Advanced search toggle-->
+                                                        </div>
+                                                        <!--end::Toolbar-->
+                                                    </form>
+                                                    <!--end::Form-->
+                                                    <!--begin::Separator-->
+                                                    <div class="separator border-gray-200 mb-6"></div>
+                                                    <!--end::Separator-->
+                                                    <!--begin::Recently viewed-->
+                                                    <div data-kt-search-element="results" class="d-none">
+                                                        <!--begin::Items-->
+                                                        <div class="scroll-y mh-200px mh-lg-350px">
+                                                            <!--begin::Category title-->
+                                                            <h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">Users</h3>
+                                                            <!--end::Category title-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <img src="assets/media/avatars/150-1.jpg" alt="" />
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Karina Clark</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Marketing Manager</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <img src="assets/media/avatars/150-3.jpg" alt="" />
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Olivia Bold</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Software Engineer</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <img src="assets/media/avatars/150-8.jpg" alt="" />
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Ana Clark</span>
+                                                                    <span class="fs-7 fw-bold text-muted">UI/UX Designer</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <img src="assets/media/avatars/150-11.jpg" alt="" />
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Nick Pitola</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Art Director</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <img src="assets/media/avatars/150-12.jpg" alt="" />
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Edward Kulnic</span>
+                                                                    <span class="fs-7 fw-bold text-muted">System Administrator</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Category title-->
+                                                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Customers</h3>
+                                                            <!--end::Category title-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <img class="w-20px h-20px" src="assets/media/svg/brand-logos/volicity-9.svg" alt="" />
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Company Rbranding</span>
+                                                                    <span class="fs-7 fw-bold text-muted">UI Design</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <img class="w-20px h-20px" src="assets/media/svg/brand-logos/tvit.svg" alt="" />
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Company Re-branding</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Web Development</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <img class="w-20px h-20px" src="assets/media/svg/misc/infography.svg" alt="" />
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Business Analytics App</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Administration</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <img class="w-20px h-20px" src="assets/media/svg/brand-logos/leaf.svg" alt="" />
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">EcoLeaf App Launch</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Marketing</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <img class="w-20px h-20px" src="assets/media/svg/brand-logos/tower.svg" alt="" />
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column justify-content-start fw-bold">
+                                                                    <span class="fs-6 fw-bold">Tower Group Website</span>
+                                                                    <span class="fs-7 fw-bold text-muted">Google Adwords</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Category title-->
+                                                            <h3 class="fs-5 text-muted m-0 pt-5 pb-5" data-kt-search-element="category-title">Projects</h3>
+                                                            <!--end::Category title-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
+                                                                        <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                                <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
+                                                                                <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!--end::Svg Icon-->
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold">Si-Fi Project by AU Themes</span>
+                                                                    <span class="fs-7 fw-bold text-muted">#45670</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+                                                                        <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                                <rect x="8" y="9" width="3" height="10" rx="1.5" fill="black" />
+                                                                                <rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="black" />
+                                                                                <rect x="18" y="11" width="3" height="8" rx="1.5" fill="black" />
+                                                                                <rect x="3" y="13" width="3" height="6" rx="1.5" fill="black" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!--end::Svg Icon-->
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold">Shopix Mobile App Planning</span>
+                                                                    <span class="fs-7 fw-bold text-muted">#45690</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
+                                                                        <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                                <path opacity="0.3" d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z" fill="black" />
+                                                                                <rect x="6" y="12" width="7" height="2" rx="1" fill="black" />
+                                                                                <rect x="6" y="7" width="12" height="2" rx="1" fill="black" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!--end::Svg Icon-->
+                                                                    </span>
+                                                                </div>
+                                                                <!--end::Symbol-->
+                                                                <!--begin::Title-->
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold">Finance Monitoring SAAS Discussion</span>
+                                                                    <span class="fs-7 fw-bold text-muted">#21090</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                            <!--begin::Item-->
+                                                            <a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
+                                                                <!--begin::Symbol-->
+                                                                <div class="symbol symbol-40px me-4">
+                                                                    <span class="symbol-label bg-light">
+                                                                        <!--begin::Svg Icon | path: icons/duotune/communication/com006.svg-->
+                                                                        <span class="svg-icon svg-icon-2 svg-icon-primary">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                                <path opacity="0.3" d="M22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2C17.5 2 22 6.5 22 12ZM12 7C10.3 7 9 8.3 9 10C9 11.7 10.3 13 12 13C13.7 13 15 11.7 15 10C15 8.3 13.7 7 12 7Z" fill="black" />
+                                                                                <path d="M12 22C14.6 22 17 21 18.7 19.4C17.9 16.9 15.2 15 12 15C8.8 15 6.09999 16.9 5.29999 19.4C6.99999 21 9.4 22 12 22Z" fill="black" />
+                                                                            </svg>
+                                                                        </span>
+                                                                        <!--end::Svg Icon-->
+                                                                    </span>
+                                                                </div>
+
+                                                                <div class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold">Dashboard Analitics Launch</span>
+                                                                    <span class="fs-7 fw-bold text-muted">#34560</span>
+                                                                </div>
+                                                                <!--end::Title-->
+                                                            </a>
+                                                            <!--end::Item-->
+                                                        </div>
+                                                        <!--end::Items-->
+                                                    </div>
+
+                                                    <div data-kt-search-element="empty" class="text-center d-none">
+                                                        <!--begin::Icon-->
+                                                        <div class="pt-10 pb-10">
+                                                            <!--begin::Svg Icon | path: icons/duotune/files/fil024.svg-->
+                                                            <span class="svg-icon svg-icon-4x opacity-50">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3" d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" fill="black" />
+                                                                    <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z" fill="black" />
+                                                                    <rect x="13.6993" y="13.6656" width="4.42828" height="1.73089" rx="0.865447" transform="rotate(45 13.6993 13.6656)" fill="black" />
+                                                                    <path d="M15 12C15 14.2 13.2 16 11 16C8.8 16 7 14.2 7 12C7 9.8 8.8 8 11 8C13.2 8 15 9.8 15 12ZM11 9.6C9.68 9.6 8.6 10.68 8.6 12C8.6 13.32 9.68 14.4 11 14.4C12.32 14.4 13.4 13.32 13.4 12C13.4 10.68 12.32 9.6 11 9.6Z" fill="black" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </div>
+                                                        <!--end::Icon-->
+                                                        <!--begin::Message-->
+                                                        <div class="pb-15 fw-bold">
+                                                            <h3 class="text-gray-600 fs-5 mb-2">No result found</h3>
+                                                            <div class="text-muted fs-7">Please try again with a different query</div>
+                                                        </div>
+                                                        <!--end::Message-->
+                                                    </div>
+                                                    <!--end::Empty-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                                <!--begin::Preferences-->
+                                                <form data-kt-search-element="advanced-options-form" class="pt-1 d-none">
+                                                    <!--begin::Heading-->
+                                                    <h3 class="fw-bold text-dark mb-7">Advanced Search</h3>
+                                                    <!--end::Heading-->
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <input type="text" class="form-control form-control-sm form-control-solid" placeholder="Contains the word" name="query" />
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <!--begin::Radio group-->
+                                                        <div class="nav-group nav-group-fluid">
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="type" value="has" checked="checked" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary">All</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="type" value="users" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="type" value="orders" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Orders</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="type" value="projects" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Projects</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                        </div>
+                                                        <!--end::Radio group-->
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <input type="text" name="assignedto" class="form-control form-control-sm form-control-solid" placeholder="Assigned to" value="" />
+                                                    </div>
+
+                                                    <div class="mb-5">
+                                                        <input type="text" name="collaborators" class="form-control form-control-sm form-control-solid" placeholder="Collaborators" value="" />
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <!--begin::Radio group-->
+                                                        <div class="nav-group nav-group-fluid">
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="attachment" value="has" checked="checked" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary">Has attachment</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                            <!--begin::Option-->
+                                                            <label>
+                                                                <input type="radio" class="btn-check" name="attachment" value="any" />
+                                                                <span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Any</span>
+                                                            </label>
+                                                            <!--end::Option-->
+                                                        </div>
+                                                        <!--end::Radio group-->
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="mb-5">
+                                                        <select name="timezone" aria-label="Select a Timezone" data-control="select2" data-placeholder="date_period" class="form-select form-select-sm form-select-solid">
+                                                            <option value="next">Within the next</option>
+                                                            <option value="last">Within the last</option>
+                                                            <option value="between">Between</option>
+                                                            <option value="on">On</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="row mb-8">
+                                                        <!--begin::Col-->
+                                                        <div class="col-6">
+                                                            <input type="number" name="date_number" class="form-control form-control-sm form-control-solid" placeholder="Lenght" value="" />
+                                                        </div>
+                                                        <!--end::Col-->
+                                                        <!--begin::Col-->
+                                                        <div class="col-6">
+                                                            <select name="date_typer" aria-label="Select a Timezone" data-control="select2" data-placeholder="Period" class="form-select form-select-sm form-select-solid">
+                                                                <option value="days">Days</option>
+                                                                <option value="weeks">Weeks</option>
+                                                                <option value="months">Months</option>
+                                                                <option value="years">Years</option>
+                                                            </select>
+                                                        </div>
+                                                        <!--end::Col-->
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Actions-->
+                                                    <div class="d-flex justify-content-end">
+                                                        <button type="reset" class="btn btn-sm btn-light fw-bolder btn-active-light-primary me-2" data-kt-search-element="advanced-options-form-cancel">Cancel</button>
+                                                        <a href="../../demo6/dist/pages/search/horizontal.html" class="btn btn-sm fw-bolder btn-primary" data-kt-search-element="advanced-options-form-search">Search</a>
+                                                    </div>
+                                                    <!--end::Actions-->
+                                                </form>
+                                                <!--end::Preferences-->
+                                                <!--begin::Preferences-->
+                                                <form data-kt-search-element="preferences" class="pt-1 d-none">
+                                                    <!--begin::Heading-->
+                                                    <h3 class="fw-bold text-dark mb-7">Search Preferences</h3>
+                                                    <!--end::Heading-->
+                                                    <!--begin::Input group-->
+                                                    <div class="pb-4 border-bottom">
+                                                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                                                            <span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Projects</span>
+                                                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                                                        </label>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="py-4 border-bottom">
+                                                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                                                            <span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Targets</span>
+                                                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                                                        </label>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="py-4 border-bottom">
+                                                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                                                            <span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Affiliate Programs</span>
+                                                            <input class="form-check-input" type="checkbox" value="1" />
+                                                        </label>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="py-4 border-bottom">
+                                                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                                                            <span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Referrals</span>
+                                                            <input class="form-check-input" type="checkbox" value="1" checked="checked" />
+                                                        </label>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Input group-->
+                                                    <div class="py-4 border-bottom">
+                                                        <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                                                            <span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Users</span>
+                                                            <input class="form-check-input" type="checkbox" value="1" />
+                                                        </label>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                    <!--begin::Actions-->
+                                                    <div class="d-flex justify-content-end pt-7">
+                                                        <button type="reset" class="btn btn-sm btn-light fw-bolder btn-active-light-primary me-2" data-kt-search-element="preferences-dismiss">Cancel</button>
+                                                        <button type="submit" class="btn btn-sm fw-bolder btn-primary">Save Changes</button>
+                                                    </div>
+                                                    <!--end::Actions-->
+                                                </form>
+                                                <!--end::Preferences-->
+                                            </div>
+                                            <!--end::Menu-->
+                                        </div>
+                                        <!--end::Search-->
+                                    </div>
+                                    <!--end::Search-->
+                                    <!--begin::Activities-->
+                                    <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                        <!--begin::Drawer toggle-->
+                                        <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px" id="kt_activities_toggle">
+                                            <i class="bi bi-bell fs-2"></i>
+                                        </div>
+                                        <!--end::Drawer toggle-->
+                                    </div>
+                                    <!--end::Activities-->
+                                    <!--begin::Quick links-->
+                                    <!--end::Quick links-->
+                                    <!--begin::Chat-->
+                                    <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                        <!--begin::Menu wrapper-->
+                                        <div class="btn btn-icon btn-active-light-primary position-relative w-30px h-30px w-md-40px h-md-40px pulse pulse-success" id="kt_drawer_chat_toggle">
+                                            <i class="bi bi-app-indicator fs-2"></i>
+                                            <span class="pulse-ring w-45px h-45px"></span>
+                                        </div>
+                                        <!--end::Menu wrapper-->
+                                    </div>
+                                    <!--end::Chat-->
+                                    <!--begin::Notifications-->
+                                    <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                        <!--begin::Menu- wrapper-->
+                                        <form method="post" asp-controller="Account" asp-action="Logout">
+                                            <button type="submit" class="btn btn-primary btn-sm px-4" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                                <span class="menu-icon me-0">
+                                                    <i class="bi bi-emoji-frown fs-2"></i>
+                                                </span>
+                                                <span class="menu-title"> Logout</span>
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                                <!--end::Toolbar wrapper-->
+                            </div>
+                            <!--end::Topbar-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                    <!--begin::Container-->
+                    <div id="kt_content_container" class="container-xxl">
+                        @RenderBody()
+                    </div>
+                </div>
+
+                @*<div class="container" style="width:stretch">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>*@
+
+                <!--begin::Scrolltop-->
+                <div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
+                    <span class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="black" />
+                            <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Scrolltop-->
+                <!--end::Main-->
+                @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - AVIJATRIK BOOKING MANAGEMENT SOFTWARE - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+
+                @*ADMIN DASHBOARD DEMO 06*@
+                <script>var hostUrl = "assets/";</script>
+                <!--begin::Javascript-->
+                <!--begin::Global Javascript Bundle(used by all pages)-->
+
+                <script src="~/demo6/assets/plugins/global/plugins.bundle.js"></script>
+                <script src="~/demo6/assets/js/scripts.bundle.js"></script>
+                <!--end::Global Javascript Bundle-->
+                <!--begin::Page Vendors Javascript(used by this page)-->
+                <script src="~/demo6/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+                <!--end::Page Vendors Javascript-->
+                <!--begin::Page Custom Javascript(used by this page)-->
+                <script src="~/demo6/assets/js/custom/widgets.js"></script>
+                <script src="~/demo6/assets/js/custom/apps/chat/chat.js"></script>
+                <script src="~/demo6/assets/js/custom/modals/create-app.js"></script>
+                <script src="~/demo6/assets/js/custom/modals/upgrade-plan.js"></script>
+
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+                <script type="text/javascript" src="~/lib/select2/js/select2.full.min.js"></script>
+                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+                <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+                <script type="text/javascript" src="~/js/notify.min.js"></script>
+                <script src="~/js/script-custom-calendar.js"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+
+
+
+                @*// DATA TABLE SCRIPTS*@
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/plug-ins/1.11.3/api/sum().js"></script>
+
+                <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
+
+
+                <!-- Initialize the editor. -->
+                <script src="~/richText/jquery.richtext.js"></script>
+                <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"></script>
+
+
+                @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+
+
+
+
